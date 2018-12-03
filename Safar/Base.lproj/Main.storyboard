@@ -44,7 +44,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBm-6I-Emd">
                                 <rect key="frame" x="77.5" y="590" width="259" height="46"/>
@@ -695,6 +695,6 @@
         <image name="suitcase" width="38" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rfw-UG-Liu"/>
+        <segue reference="nWc-ws-gf4"/>
     </inferredMetricsTieBreakers>
 </document>
