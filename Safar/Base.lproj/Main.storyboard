@@ -189,13 +189,34 @@
                                                     </constraints>
                                                     <state key="normal" title="Button" image="share"/>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBI-63-cPd">
+                                                    <rect key="frame" x="45" y="536" width="66" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="INj-jk-NNT">
+                                                    <rect key="frame" x="20" y="534" width="15" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="o9i-9h-qMc"/>
+                                                        <constraint firstAttribute="height" constant="22" id="riR-03-YYd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRx-I3-uyV">
+                                                    <rect key="frame" x="185" y="527" width="69" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="more"/>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Pvs-Uz-xPl" firstAttribute="top" secondItem="nVQ-FF-lvC" secondAttribute="bottom" constant="23" id="4Si-Y7-86j"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="vUH-jw-sgk" secondAttribute="trailing" constant="12" id="A6c-NK-w75"/>
+                                            <constraint firstItem="oBI-63-cPd" firstAttribute="leading" secondItem="INj-jk-NNT" secondAttribute="trailing" constant="10" id="CNI-o8-kBI"/>
+                                            <constraint firstItem="INj-jk-NNT" firstAttribute="top" secondItem="xbu-ef-Aku" secondAttribute="bottom" constant="13" id="Gk5-a5-ROb"/>
                                             <constraint firstItem="xbu-ef-Aku" firstAttribute="top" secondItem="Pvs-Uz-xPl" secondAttribute="bottom" constant="15" id="IGd-Q3-5rD"/>
                                             <constraint firstItem="Pvs-Uz-xPl" firstAttribute="leading" secondItem="3eg-gU-Bd3" secondAttribute="leadingMargin" constant="12" id="Jp6-Rt-fyw"/>
+                                            <constraint firstItem="oBI-63-cPd" firstAttribute="top" secondItem="xbu-ef-Aku" secondAttribute="bottom" constant="15" id="M95-EJ-f4C"/>
                                             <constraint firstItem="Pvs-Uz-xPl" firstAttribute="centerX" secondItem="3eg-gU-Bd3" secondAttribute="centerX" id="Mm6-Ed-fVR"/>
                                             <constraint firstItem="vUH-jw-sgk" firstAttribute="top" secondItem="3eg-gU-Bd3" secondAttribute="topMargin" constant="20" id="SjN-E8-qce"/>
                                             <constraint firstItem="nVQ-FF-lvC" firstAttribute="leading" secondItem="3eg-gU-Bd3" secondAttribute="leadingMargin" constant="17" id="YhW-k1-FUY"/>
@@ -209,18 +230,24 @@
                                             <constraint firstItem="nVQ-FF-lvC" firstAttribute="top" secondItem="3eg-gU-Bd3" secondAttribute="topMargin" constant="17" id="n0H-fO-9Lu"/>
                                             <constraint firstItem="uT1-w8-FF3" firstAttribute="leading" secondItem="nVQ-FF-lvC" secondAttribute="trailing" constant="17" id="nxW-8y-ici"/>
                                             <constraint firstItem="ggd-M4-FKu" firstAttribute="leading" secondItem="nVQ-FF-lvC" secondAttribute="trailing" constant="17" id="te5-gF-r73"/>
+                                            <constraint firstItem="INj-jk-NNT" firstAttribute="leading" secondItem="3eg-gU-Bd3" secondAttribute="leadingMargin" constant="12" id="vIz-dr-nJq"/>
                                             <constraint firstItem="xbu-ef-Aku" firstAttribute="leading" secondItem="3eg-gU-Bd3" secondAttribute="leading" id="vTR-bx-U8g"/>
                                             <constraint firstItem="ggd-M4-FKu" firstAttribute="top" secondItem="uT1-w8-FF3" secondAttribute="bottom" constant="4" id="w1v-cw-CP5"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dateLabel" destination="ggd-M4-FKu" id="kHW-Ok-uTe"/>
                                             <outlet property="descriptionLabel" destination="Pvs-Uz-xPl" id="fzR-JF-0CV"/>
+                                            <outlet property="locationLabel" destination="oBI-63-cPd" id="UUd-pJ-rTx"/>
                                             <outlet property="nameLabel" destination="uT1-w8-FF3" id="Q1m-8B-9YW"/>
                                             <outlet property="photoImageView" destination="xbu-ef-Aku" id="IW0-JQ-ZTg"/>
                                             <outlet property="profileImage" destination="nVQ-FF-lvC" id="cht-9Q-byr"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="jpA-jx-AGy" id="Li2-WA-xb5"/>
+                                    <outlet property="delegate" destination="jpA-jx-AGy" id="xIx-P8-dQt"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POc-WQ-5RV">
                                 <rect key="frame" x="16" y="20" width="38" height="38"/>
@@ -259,13 +286,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPQ-9M-E8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="123"/>
+            <point key="canvasLocation" x="704.79999999999995" y="122.78860569715144"/>
         </scene>
     </scenes>
     <resources>
         <image name="comment" width="28" height="26"/>
         <image name="earth" width="38" height="38"/>
+        <image name="location" width="15" height="22"/>
         <image name="loginRectangle" width="259" height="46"/>
+        <image name="more" width="15" height="4"/>
         <image name="plane" width="30" height="30"/>
         <image name="share" width="32" height="22"/>
         <image name="suitcase" width="38" height="38"/>
