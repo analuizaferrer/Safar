@@ -26,6 +26,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     let itemsPerRow: CGFloat = 1
     
+    override func viewDidLoad() {
+        
+        feedCollectionView.contentInsetAdjustmentBehavior = .never
+        
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return 1
