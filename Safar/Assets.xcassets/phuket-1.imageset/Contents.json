@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "machuPicchu.png",
+      "filename" : "phuket.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "machuPicchu@2x.png",
+      "filename" : "phuket@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "machuPicchu@3x.png",
+      "filename" : "phuket@3x.png",
       "scale" : "3x"
     }
   ],
