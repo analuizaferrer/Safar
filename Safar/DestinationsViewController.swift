@@ -12,6 +12,10 @@ class DestinationsViewController: UIViewController, UICollectionViewDataSource, 
 
     @IBOutlet weak var destinationsCollectionView: UICollectionView!
     
+    let destinations = ["Trendings","Beach Please","Discover Africa","Quick Getaway"]
+    let destinationsImage = ["santorini","beach","africa","getaway"]
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,15 +23,19 @@ class DestinationsViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return destinations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "destinationCollectionViewCell", for: indexPath) as! DestinationCollectionViewCell
         
+        cell.destinationLabel.text = destinations[indexPath.row]
+        cell.destinationImageView.image = UIImage.init(named: destinationsImage[indexPath.row])
+       
         return cell
         
     }
 
 }
+
