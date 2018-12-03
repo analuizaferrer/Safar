@@ -14,7 +14,7 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var feedCollectionView: UICollectionView!
     
     let feedProfiles = ["azinprofile","flavioprofile","richardprofile","anaprofile"]
-    let feedImages = ["phuket","tahoe","MachuPicchu","rio"]
+    let feedImages = ["phuket","tahoe","machuPicchu","rio"]
     let feedUsers = ["Azin Mirzaagha", "Flávio Romero", "Richard Tan", "Ana Ferrer"]
     let feedData = ["20 minutes ago", "1 hour ago","5 hours ago","1 day ago"]
     let feedLabel = ["Chillin' in Thailand 👌", "Cal adventure 🤙","Llamaaas!🤪","Just another day of summer in Rio 😎"]
