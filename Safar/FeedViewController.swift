@@ -13,7 +13,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var feedCollectionView: UICollectionView!
     
-    let feedImages = ["phuket", "machuPicchu", "rio"]
+    let feedProfiles = ["azinprofile","flavioprofile","richardprofile","anaprofile"]
+    let feedImages = ["phuket","tahoe","MachuPicchu","rio"]
+    let feedUsers = ["Azin Mirzaagha", "Flávio Romero", "Richard Tan", "Ana Ferrer"]
+    let feedData = ["20 minutes ago", "1 hour ago","5 hours ago","1 day ago"]
+    let feedLabel = ["Chillin' in Thailand 👌", "Cal adventure 🤙","Llamaaas!🤪","Just another day of summer in Rio 😎"]
+    let feedLocation = ["Phuket, Thailand","South Lake Tahoe, USA", "MachuPicchu, Peru", "Rio de Janeiro, Brazil"]
     
     let reuseIdentifier = "FeedCell"
     
@@ -38,6 +43,12 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
         
         cell.photoImageView.image = UIImage.init(named: feedImages[indexPath.row])
+        cell.nameLabel.text = feedUsers[indexPath.row]
+        cell.dateLabel.text = feedData[indexPath.row]
+        cell.descriptionLabel.text = feedLabel[indexPath.row]
+        cell.locationLabel.text = feedLocation[indexPath.row]
+        cell.profileImage.image = UIImage.init(named: feedProfiles[indexPath.row])
+        
         
         return cell
         
@@ -63,5 +74,4 @@ class FeedViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return sectionInsets.left
         
     }
-    
 }
