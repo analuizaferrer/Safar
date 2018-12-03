@@ -1,15 +1,17 @@
 //
-//  FeedCollectionViewController.swift
+//  FeedViewController.swift
 //  Safar
 //
-//  Created by Ana Luiza Ferrer on 01/12/18.
+//  Created by Ana Luiza Ferrer on 02/12/18.
 //  Copyright © 2018 Safar. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class FeedCollectionViewController: UICollectionViewController {
+class FeedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var feedCollectionView: UICollectionView!
     
     let feedImages = ["phuket", "machuPicchu", "rio"]
     
@@ -19,22 +21,22 @@ class FeedCollectionViewController: UICollectionViewController {
     
     let itemsPerRow: CGFloat = 1
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return 1
         
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return feedImages.count
         
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCollectionViewCell
-
+        
         cell.photoImageView.image = UIImage.init(named: feedImages[indexPath.row])
         
         return cell
