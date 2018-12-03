@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height/2
+                self.view.frame.origin.y -= keyboardSize.height
             }
         }
     }
@@ -47,5 +47,5 @@ class ViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         
     }
-
+   
 }
